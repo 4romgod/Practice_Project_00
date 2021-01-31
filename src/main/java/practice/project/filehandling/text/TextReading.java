@@ -39,13 +39,15 @@ public class TextReading {
             System.out.println("No file provided!");
             return;
         }
-        BufferedReader br = new BufferedReader(new FileReader(fileName));
-        String line = br.readLine();
-        while (line != null) {
-            System.out.println(line);
-            line = br.readLine();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            String line = br.readLine();
+            while (line != null) {
+                System.out.println(line);
+                line = br.readLine();
+            }
+        } catch (IOException ioException) {
+            throw new IOException("Could not read file with name: " + fileName);
         }
-        br.close();
     }
 
 }
