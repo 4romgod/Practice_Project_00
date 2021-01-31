@@ -23,6 +23,15 @@ public class Calculator {
         return num1 * num2;
     }
 
+    /**
+     *
+     * @param num1
+     * @param num2
+     * @return
+     * @throws ArithmeticException Keep in mind that ArithmeticException is an unchecked exception.
+     * And the proper way to deal with unchecked exceptions is by just using if statements to validate
+     * your variables before using them. Here I am treating it as if it were a checked exception for practice purposes
+     */
     public int divide(int num1, int num2) throws ArithmeticException {
         LOGGER.info("Dividing '{}' by '{}'", num1, num2);
         return num1/num2;

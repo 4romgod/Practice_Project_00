@@ -36,7 +36,7 @@ public class App {
                     default:
                         System.out.println("Unknown operation!");
                 }
-            } catch (ArithmeticException arithmeticException) {
+            } catch (ArithmeticException arithmeticException) {     // catching unchecked exceptions is not best practice. I could just simply validate before using
                 System.out.println(arithmeticException.getMessage());
             }
         } while (shouldContinue);
