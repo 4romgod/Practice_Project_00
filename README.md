@@ -37,3 +37,5 @@ I will be using java.util.logging and sl4j to log messages.
 
 # Unit Testing
 Test Driven Development states that we first write the unit tests, then create implementation around those tests.
+
+[README.md syntax](https://guides.github.com/features/mastering-markdown/)
