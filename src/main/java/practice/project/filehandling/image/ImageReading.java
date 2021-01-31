@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
@@ -44,11 +43,12 @@ public class ImageReading {
             System.out.println("No file provided!");
             return null;
         }
-        BufferedImage bufferedImage = ImageIO.read(new File(imageName));
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        ImageIO.write(bufferedImage, "jpg", byteArrayOutputStream);
-
-        return bufferedImage;
+        try {
+            BufferedImage bufferedImage = ImageIO.read(new File(imageName));
+            return bufferedImage;
+        } catch (IOException ioException) {
+            throw new IOException("Could not create BufferedImage for file: " + imageName, ioException);
+        }
     }
 
     public void showImage(BufferedImage bufferedImage) {

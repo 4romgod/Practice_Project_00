@@ -46,7 +46,7 @@ public class TextReading {
                 line = br.readLine();
             }
         } catch (IOException ioException) {
-            throw new IOException("Could not read file with name: " + fileName);
+            throw new IOException("Could not read file with name: " + fileName, ioException);
         }
     }
 
